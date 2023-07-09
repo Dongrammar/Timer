@@ -7,7 +7,7 @@ ti = int(input("The time > "))
 try:
 
     with alive_bar(ti) as bar:
-        for item in range(ti):  # 遍历任务
+        for item in range(ti):
 
             time.sleep(1)
             bar()
