@@ -13,15 +13,21 @@ def start(ti):
      while True:
         next_time = time.perf_counter()
 
-        if int(next_time) - int(start_time)  == int(ti):
-            print("Finish!")
-            print("Ctrl-C to Quit")
+        dive = float(next_time) - float(start_time)
+        print('\r', round(dive, 3), end='', flush=True)
+
+        if int(dive)  == int(ti):
+            break
+
+     print("\nFinish!")
+     print("Press Ctrl-C to Quit")
 
 
-            pygame.mixer.init()
-            music = pygame.mixer.Sound("sound.mp3")
+     while True:
+        pygame.mixer.init()
+        music = pygame.mixer.Sound("sound.mp3")
             
-            music.play(-1)
+        music.play(-1)
 
     except KeyboardInterrupt:
        print("Already exited.")
